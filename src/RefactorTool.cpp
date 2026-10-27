@@ -110,7 +110,8 @@ void RefactorHandler::handle_crange_for(const VarDecl *LoopVar, DiagnosticsEngin
     }
     // Учитываем const после имени типа: T const x -> T const& x.
     while (const auto Next = Lexer::findNextToken(TypeEnd, SM, Rewrite.getLangOpts())) {
-        if (!Next->isOneOf(tok::kw_const, tok::kw_volatile)) {
+        const auto Spelling = Lexer::getSpelling(*Next, SM, Rewrite.getLangOpts());
+        if (Spelling != "const" && Spelling != "volatile") {
             break;
         }
         TypeEnd = Next->getLocation();
