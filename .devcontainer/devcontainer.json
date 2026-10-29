@@ -1,4 +1,8 @@
 {
+  "runArgs": [
+    "--cap-add=PERFMON",
+    "--security-opt=seccomp=unconfined"
+  ],
   "name": "Ubuntu25.04 with GCC15",
   "build": {
       "dockerfile": "./Dockerfile",
