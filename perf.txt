@@ -1,0 +1,5 @@
+ Performance counter stats for './perf_example' (5 runs):
+
+           1492.02 msec task-clock                       #    0.996 CPUs utilized               ( +-  9.03% )
+
+             1.498 +- 0.137 seconds time elapsed  ( +-  9.13% )
