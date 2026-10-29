@@ -1,11 +1,15 @@
 {
+  "runArgs": [
+    "--cap-add=PERFMON",
+    "--security-opt=seccomp=unconfined"
+  ],
   "name": "Ubuntu25.04 with GCC15",
   "build": {
       "dockerfile": "./Dockerfile",
       "context": ".",
       "args": {
-        "USER_UID": "${localEnv:USER_UID}",
-        "USER_GID": "${localEnv:USER_GID}"
+        "USER_UID": "1000",
+        "USER_GID": "1000"
       }
   },
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",

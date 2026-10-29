@@ -7,7 +7,7 @@ struct HeavyObject {
 
 int main() {
     std::vector<HeavyObject> vec(100000);  // Большой контейнер
-    for (const auto obj : vec) {  // Копирование без &
+    for (const auto& obj : vec) {  // Доступ по ссылке без копирования
         const auto& data = obj.data[0];
     }
     return 0;
